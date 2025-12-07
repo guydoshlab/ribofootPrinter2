@@ -108,6 +108,8 @@ for file in $FASTA/*.zip; do unzip $file; done
 
 ## SCRIPT 1. Run *builddense* to generate ROCC files from SAM files
 This script requires a SAM file containing bowtie1 aligned reads located in ./ribofootPrinter2.0-beta/sam_files (see above). 
+![alt text](https://github.com/guydoshlab/ribofootPrinter2.0-beta/blob/main/Github_figures/builddense.png)
+
 This example code will generate 5'-end mapped ROCC files from single-end reads from example datasets (ribosome profiling and 40S-seq). 
 
 ```unix
@@ -163,13 +165,13 @@ python $CODE/genelist.py $ROCC/40S.rocc 12 1 $DATA/genelist/40S_gl > $DATA/genel
 This Python script takes a ROCC file and averages ribosome profiling data around any sequence feature of interest or computes a pause score for every occurrence of all 61 codons or 20 amino acids.
 python. This example code generates posavg for all amino acids in the main frame for the CDS:
 
-![alt text](https://github.com/guydoshlab/ribofootPrinter2.0-beta/blob/main/Github_tables/settings_posavg1.png)
+![alt text](https://github.com/guydoshlab/ribofootPrinter2.0-beta/blob/main/Github_figures/settings_posavg1.png)
 
 ```unix
 python $CODE/posavg.py $ROCC/80S.rocc all_1 1 0 0 30 0 12 1 none $DATA/posavg/80S_pa_all_1_aa_CDS_frame0 > $DATA/posavg/80S_pa_all_1_aa_CDS_frame0_metadata.txt
 ```
 
-![alt text](https://github.com/guydoshlab/ribofootPrinter2.0-beta/blob/main/Github_tables/settings_posavg2.png)
+![alt text](https://github.com/guydoshlab/ribofootPrinter2.0-beta/blob/main/Github_figures/settings_posavg2.png)
 
 Example code for uORF analysis with different normalization settings:
 ```unix
@@ -193,8 +195,8 @@ python $CODE/posavg.py $ROCC/80S.rocc ATG 0 3 0 30 1 12 2 none $DATA/posavg/80S_
 ## SCRIPT 5. Run *metagene* from ROCC files
 This Python script takes a ROCC file and calculates the average around start or stop codons. Note that if the UTRs are shorter than the 5' or 3' range settings, these transcripts will be excluded from the analysis. Information of number of transcripts included in the analysis can be found as an output.
 
-![alt text](https://github.com/guydoshlab/ribofootPrinter2.0-beta/blob/main/Github_tables/metagene1.png)
-![alt text](https://github.com/guydoshlab/ribofootPrinter2.0-beta/blob/main/Github_tables/metagene2.png)
+![alt text](https://github.com/guydoshlab/ribofootPrinter2.0-beta/blob/main/Github_figures/metagene1.png)
+![alt text](https://github.com/guydoshlab/ribofootPrinter2.0-beta/blob/main/Github_figures/metagene2.png)
 
 This code will generate a start and stop codon metagene for all transcripts:
 ```unix
@@ -216,7 +218,7 @@ python $CODE/metagene.py $ROCC/80S.rocc 2 1 5 50 300 ./associated_files/subset_l
 
 ## SCRIPT 6. Run *smorflist* from ROCC files
 This Python script takes a ROCC file and counts reads that map in frame to uORF or dORFs in the 5’ or 3’ UTR, respectively.
-![alt text](https://github.com/guydoshlab/ribofootPrinter2.0-beta/blob/main/Github_tables/smorflist.png)
+![alt text](https://github.com/guydoshlab/ribofootPrinter2.0-beta/blob/main/Github_figures/smorflist.png)
 
 This example code will provide a list of predicted uORF containing transcripts with a length of 4 amino acids strictly starting with ATG:
 ```unix
@@ -230,7 +232,7 @@ python $CODE/smorflist.py $ROCC/80S.rocc 4 12 0 0 5 $DATA/smorflist/80S_uorflist
 ## SCRIPT 7. Run *posstats* from ROCC files
 This Python script takes a ROCC file and computes pause scores for every individual occurrence of a sequence feature of interest. 
 
-![alt text](https://github.com/guydoshlab/ribofootPrinter2.0-beta/blob/main/Github_tables/posstats.png)
+![alt text](https://github.com/guydoshlab/ribofootPrinter2.0-beta/blob/main/Github_figures/posstats.png)
 This example code calculated pause scores for PPG and AAA tri-amino acid motifs in our ribosome profiling dataset:
 ```unix
 python $CODE/posstats.py $ROCC/80S.rocc PPG 1 0 10 1 12 1 $DATA/posstats/80S_ps_PPG >  $DATA/posstats/80S_ps_PPG_metadata.txt
