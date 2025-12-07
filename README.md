@@ -208,13 +208,13 @@ How the code works:
 The example code generates a start and stop codon metagene for all transcripts:
 ```unix
 python $CODE/metagene.py $ROCC/80S.rocc 1 1 5 50 300 none $DATA/metagene/80S_mg_start > $DATA/metagene/80S_mg_start_metadata.txt
-python $CODE/metagene.py $ROCC/80S.rocc 2 1 5 50 300 none $DATA/metagene/80S_mg_stop > $DATA/metagene/80S_mg_stop_metadata.txt
+python $CODE/metagene.py $ROCC/80S.rocc 2 1 5 300 50 none $DATA/metagene/80S_mg_stop > $DATA/metagene/80S_mg_stop_metadata.txt
 ```
 
 The example code generates a start and stop codon metagene for a subset of the dataset containing predicted uORF transcripts:
 ```unix
 python $CODE/metagene.py $ROCC/80S.rocc 1 1 5 50 300 ./associated_files/subset_list.xlsx $DATA/metagene/80S_mg_start_subset > $DATA/metagene/80S_mg_start_subset_metadata.txt
-python $CODE/metagene.py $ROCC/80S.rocc 2 1 5 50 300 ./associated_files/subset_list.xlsx $DATA/metagene/80S_mg_stop_subset > $DATA/metagene/80S_mg_stop_subset_metadata.txt
+python $CODE/metagene.py $ROCC/80S.rocc 2 1 5 300 50 ./associated_files/subset_list.xlsx $DATA/metagene/80S_mg_stop_subset > $DATA/metagene/80S_mg_stop_subset_metadata.txt
 ```
 ![alt text](https://github.com/guydoshlab/ribofootPrinter2.0-beta/blob/main/Github_tables/settings_metagene.png)
 
