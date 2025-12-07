@@ -53,12 +53,10 @@ Most scripts require a ROCC file as input file. The ROCC file is generated from 
 The remaining scripts use SAM files as input files (ROCC file generation not required):
 
 7. *region_size_and_abundance*
-
 8. *metagene_3D*
 
 
-![Alt text of the image](https://github.com/guydoshlab/ribofootPrinter2.0-beta/tree/main/Github_figures/ribofootPrinter.png)
-
+![alt text](https://github.com/guydoshlab/ribofootPrinter2.0-beta/blob/main/Github_figures/ribofootPrinter.png)
 
 
 ## Generate folders for output files
@@ -94,6 +92,6 @@ This example code will generate 5'-end mapped ROCC files from single-end reads f
 python $CODE/builddense.py $FASTA/MANEv1.4_longnames.fasta $SAM/80S.SAM $ROCC/80S -1 25 34 1
 ```
 
-![Alt text of the image](https://github.com/guydoshlab/ribofootPrinter2.0-beta/tree/main/Github_tables/settings_builddense.png)
+![alt text](https://github.com/guydoshlab/ribofootPrinter2.0-beta/blob/main/Github_tables/settings_builddense.png)
 
 
