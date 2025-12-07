@@ -148,6 +148,7 @@ python $CODE/writegene2.py $ROCC/80S.rocc EIF4G2 $DATA/writegene2/80S_wg2_EIF4G2
 ## SCRIPT 3. Run *genelist* from ROCC files
 This Python script takes a ROCC file and counts reads that map to the main ORF and UTRs of gene models. It also calculates open reading frames on individual transcripts.
 ![alt text](https://github.com/guydoshlab/ribofootPrinter2.0-beta/blob/main/Github_figures/genelist.png)
+
 The 5'-end aligned data is shifted to accommodate the P-site of the ribosome for example. We used a shift of 12 for our riboseq in the example code. Note that genes with 5'-UTRs shorter than the shift value are excluded from the analysis.
 
 ![alt text](https://github.com/guydoshlab/ribofootPrinter2.0-beta/blob/main/Github_figures/shift.png)
@@ -176,13 +177,13 @@ python $CODE/posavg.py $ROCC/80S.rocc all_1 1 0 0 30 0 12 1 none $DATA/posavg/80
 
 ![alt text](https://github.com/guydoshlab/ribofootPrinter2.0-beta/blob/main/Github_figures/posavg2.png)
 
-The example code outputs predicted uORFs with different normalization settings:
+The example code outputs data for uORFs with different normalization settings:
 ```unix
 python $CODE/posavg.py $ROCC/80S.rocc ATG 0 3 0 30 0 12 0 none $DATA/posavg/80S_pa_ATG_UTR5_allframe_norm0 > $DATA/posavg/80S_pa_uORF_norm0_metadata.txt 
 python $CODE/posavg.py $ROCC/80S.rocc ATG 0 3 0 30 1 12 0 none $DATA/posavg/80S_pa_ATG_UTR5_allframe_norm1 > $DATA/posavg/80S_pa_uORF_norm1_metadata.txt 
 ```
 
-The example code outputs predicted dORFs with different normalization settings:
+The example code outputs data for dORFs with different normalization settings:
 ```unix
 python $CODE/posavg.py $ROCC/80S.rocc ATG 0 3 0 30 0 12 2 none $DATA/posavg/80S_pa_ATG_UTR3_allframe_norm0 > $DATA/posavg/80S_pa_dORF_norm0_metadata.txt 
 python $CODE/posavg.py $ROCC/80S.rocc ATG 0 3 0 30 1 12 2 none $DATA/posavg/80S_pa_ATG_UTR3_allframe_norm1 > $DATA/posavg/80S_pa_dORF_norm1_metadata.txt 
@@ -284,13 +285,13 @@ This script takes a bowtie aligned SAM file (single-end reads) and averages read
 
 The example code outputs 3D metagene data for ribosome profiling data on start and stop codons:
 ```unix
-python $CODE/3D_metagene.py $FASTA/MANEv1.4_longnames.fasta $SAM/80S.SAM $DATA/metagene_3D/80S_3dmg_start 25 34 30 75 1 > $DATA/metagene_3D/80S_3dmg_start_metadata.txt
-python $CODE/3D_metagene.py $FASTA/MANEv1.4_longnames.fasta $SAM/80S.SAM $DATA/metagene_3D/80S_3dmg_stop 25 34 75 30 2 > $DATA/metagene_3D/80S_3dmg_stop_metadata.txt
+python $CODE/3D_metagene.py $FASTA/MANEv1.4_longnames.fasta $SAM/80S.SAM $DATA/metagene_3D/80S_3dmg_start none 25 34 30 75 1 > $DATA/metagene_3D/80S_3dmg_start_metadata.txt
+python $CODE/3D_metagene.py $FASTA/MANEv1.4_longnames.fasta $SAM/80S.SAM $DATA/metagene_3D/80S_3dmg_stop none 25 34 75 30 2 > $DATA/metagene_3D/80S_3dmg_stop_metadata.txt
 ```
 
 The example code outputs 3D metagene data for 40S-seq data on start codons:
 ```unix
-python $CODE/3D_metagene.py $FASTA/MANEv1.4_longnames.fasta $SAM/40S.SAM $DATA/metagene_3D/40S_3dmg_start 20 80 50 50 1 > $DATA/metagene_3D/40S_3dmg_start_metadata.txt
+python $CODE/3D_metagene.py $FASTA/MANEv1.4_longnames.fasta $SAM/40S.SAM $DATA/metagene_3D/40S_3dmg_start none 20 80 50 50 1 > $DATA/metagene_3D/40S_3dmg_start_metadata.txt
 ```
 ![alt text](https://github.com/guydoshlab/ribofootPrinter2.0-beta/blob/main/Github_tables/settings_3D_metagene.png)
 
