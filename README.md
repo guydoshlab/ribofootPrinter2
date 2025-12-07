@@ -69,7 +69,7 @@ The remaining scripts use SAM files as input files (ROCC file generation not req
 9. *metagene_3D*
 
 
-![alt text](https://github.com/guydoshlab/ribofootPrinter2.0-beta/tree/main/Github_figures/ribofootprinter.png)
+![alt text](https://github.com/guydoshlab/ribofootPrinter2.0-beta/blob/main/Github_figures/ribofootprinter.png)
 
 
 ## Generate folders for data files
