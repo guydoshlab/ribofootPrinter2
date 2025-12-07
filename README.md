@@ -22,6 +22,7 @@ cd ./ribofootPrinter2.0-beta/
 # Requirements for running ribofootPrinter
 ## Environment
 We run the Python toolbox ribofootPrinter locally inside a conda generated virtual environment using the terminal which has following dependencies installed:
+
 python v3.9.23
 
 biopython v1.85
@@ -54,6 +55,7 @@ Most scripts require a ROCC file as input file. The ROCC file is generated from 
 1. *builddense*
 
 ROCC file dependent scripts:
+
 2. *writegene2*
 3. *metagene*
 4. *genelist*
