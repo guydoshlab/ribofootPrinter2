@@ -36,16 +36,16 @@ numpy v2.0.2
 openpyxl v3.1.5
 
 ## Alignment files
-*ribofootPrinter* is compatible with bowtie1 aligned SAM files. We use the MANEv1.4_shortnames.fasta reduced transcriptome file for alignments, found [here](https://github.com/guydoshlab/ribofootPrinter2.0-beta/tree/main/preparation/MANE_v1.4_Preparation/output_files).
+*ribofootPrinter* is compatible with bowtie1 aligned SAM files. We use the bowtie indexed version of the MANEv1.4_shortnames.fasta reduced transcriptome file for alignments (EBWT file extension), found [here](https://github.com/guydoshlab/ribofootPrinter2.0-beta/tree/main/preparation/MANE_v1.4_Preparation/output_files) (unzip before use).
 
-An overview on how to run the different *ribofootPrinter* scripts is listed below. This includes example code which can be used on the datasets provided [here](MENDELEY LINK). 
+An overview on how to run the different *ribofootPrinter* scripts is listed below. This includes example code which can be used directly on the datasets provided [here](MENDELEY LINK). 
 
 Create a new directory in the ribofootPrinter folder and download the SAM files here:
 ```unix
 mkdir -p ./sam_files/
 ```
 
-More details on preparation of the MANE transcriptome for alignment (shortnames.FASTA) and ribofootPrinter (longnames.FASTA) can be found [here](https://github.com/guydoshlab/ribofootPrinter2.0-beta/tree/main/preparation/MANE_v1.4_Preparation/output_files).
+More details on preparation of the MANE transcriptome for alignment (shortnames.FASTA) and ribofootPrinter (longnames.FASTA) can be found [here](https://github.com/guydoshlab/ribofootPrinter2.0-beta/tree/main/preparation/MANE_v1.4_Preparation/).
 
 More details how to view your aligned reads in IGV can be found [here](https://github.com/guydoshlab/ribofootPrinter2.0-beta/tree/main/preparation/MANE_v1.4_IGV).
 
@@ -100,6 +100,10 @@ mkdir -p ./data_files/writegene2 ./data_files/metagene ./data_files/genelist ./d
 ```unix
 for file in $FASTA/*.zip; do unzip $file; done
 ```
+```unix
+mv *.fasta $FASTA
+mv *.ebwt $FASTA  
+```
 
 
 
@@ -130,8 +134,8 @@ This Python script takes a ROCC file and determines the abundance of 5'- or 3'-e
 
 The example code outputs data for ACTB and EIF4G2 from ribosome profiling data:
 ```unix
-python  $CODE/writegene2.py $ROCC/80S.rocc ACTB $DATA/writegene2/80S_wg2_ACTB > $DATA/writegene2/80S_wg2_ACTB_metadata.txt
-python  $CODE/writegene2.py $ROCC/80S.rocc EIF4G2 $DATA/writegene2/80S_wg2_EIF4G2 > $DATA/writegene2/80S_wg2_EIF4G2_metadata.txt
+python $CODE/writegene2.py $ROCC/80S.rocc ACTB $DATA/writegene2/80S_wg2_ACTB > $DATA/writegene2/80S_wg2_ACTB_metadata.txt
+python $CODE/writegene2.py $ROCC/80S.rocc EIF4G2 $DATA/writegene2/80S_wg2_EIF4G2 > $DATA/writegene2/80S_wg2_EIF4G2_metadata.txt
 ```
 ![alt text](https://github.com/guydoshlab/ribofootPrinter2.0-beta/blob/main/Github_tables/settings_writegene2.png)
 
@@ -163,14 +167,14 @@ python $CODE/genelist.py $ROCC/40S.rocc 12 1 $DATA/genelist/40S_gl > $DATA/genel
 ## SCRIPT 4. Run *posavg* from ROCC files
 This Python script takes a ROCC file and averages ribosome profiling data around any sequence feature of interest or computes a pause score for every occurrence of all 61 codons or 20 amino acids.
 python. 
-![alt text](https://github.com/guydoshlab/ribofootPrinter2.0-beta/blob/main/Github_figures/settings_posavg1.png)
+![alt text](https://github.com/guydoshlab/ribofootPrinter2.0-beta/blob/main/Github_figures/posavg1.png)
 
 The example code calculates pause scores for all amino acids in the main frame for the CDS:
 ```unix
 python $CODE/posavg.py $ROCC/80S.rocc all_1 1 0 0 30 0 12 1 none $DATA/posavg/80S_pa_all_1_aa_CDS_frame0 > $DATA/posavg/80S_pa_all_1_aa_CDS_frame0_metadata.txt
 ```
 
-![alt text](https://github.com/guydoshlab/ribofootPrinter2.0-beta/blob/main/Github_figures/settings_posavg2.png)
+![alt text](https://github.com/guydoshlab/ribofootPrinter2.0-beta/blob/main/Github_figures/posavg2.png)
 
 The example code outputs predicted uORFs with different normalization settings:
 ```unix
