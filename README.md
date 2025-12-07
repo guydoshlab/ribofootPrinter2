@@ -24,15 +24,10 @@ Some files have been uploaded as compressed ZIP files and need to be unzipped pr
 ## Environment
 We run the Python toolbox ribofootPrinter locally inside a conda generated virtual environment using the terminal which has following dependencies installed:
 python v3.9.23
-
 biopython v1.85
-
 matplotlib v3.9.4
-
 pandas v2.3.2
-
 numpy v2.0.2
-
 openpyxl v3.1.5
 
 ## Alignment files
@@ -57,9 +52,13 @@ Most scripts require a ROCC file as input file. The ROCC file is generated from 
 
 The remaining scripts use SAM files as input files (ROCC file generation not required):
 7. *region_size_and_abundance*
+
 8. *metagene_3D*
 
-![alt text](https://github.com/guydoshlab/Github_figures/ribofootPrinter.png)
+
+![alt text](https://github.com/guydoshlab/ribofootPrinter2.0-beta/tree/main/Github_figures/ribofootPrinter.png)
+
+
 
 ## Generate folders for output files
 ```unix
