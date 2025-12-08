@@ -264,12 +264,12 @@ python $CODE/region_size_and_abundance.py $FASTA/MANEv1.4_longnames.fasta $SAM/8
 
 The example code outputs data for ribosome profiling data for *EIF4G2*: 
 ```unix
-python $CODE/region_size_and_abundance.py $FASTA/MANEv1.4_longnames.fasta $SAM/80S.SAM $DATA/region_size_and_abundance/80S_rsa 25 34 4 ./associated_files/subset_list_EIF4G2.xlsx > $DATA/region_size_and_abundance/80S_rsa_metadata.txt
+python $CODE/region_size_and_abundance.py $FASTA/MANEv1.4_longnames.fasta $SAM/80S.SAM $DATA/region_size_and_abundance/80S_rsa_subset 25 34 4 ./associated_files/subset_list_EIF4G2.xlsx > $DATA/region_size_and_abundance/80S_rsa_subset_metadata.txt
 ```
 
 The example code outputs data for 40S-seq data for all transcripts: 
 ```unix
-python $CODE/region_size_and_abundance.py $FASTA/MANEv1.4_longnames.fasta $SAM/40S.SAM $DATA/region_size_and_abundance/40S_rsa 25 34 4 none > $DATA/region_size_and_abundance/40S_rsa_metadata.txt
+python $CODE/region_size_and_abundance.py $FASTA/MANEv1.4_longnames.fasta $SAM/40S.SAM $DATA/region_size_and_abundance/40S_rsa 20 80 4 none > $DATA/region_size_and_abundance/40S_rsa_metadata.txt
 ```
 
 ![alt text](https://github.com/guydoshlab/ribofootPrinter2.0-beta/blob/main/Github_tables/settings_rsa.png)
@@ -298,25 +298,25 @@ python $CODE/3D_metagene.py $FASTA/MANEv1.4_longnames.fasta $SAM/40S.SAM $DATA/m
 Plots can be generated from the 3D output csv files using the script below that generates a matplotlib window with controls to view/save the metagene image. The read abundance is shown by a color scheme. 
 Ribosome profiling plots:
 ```unix
-python $CODE/3D_metagene_plot.py 80S_3dmg_start_3Dmeta_end3.csv 
+python $CODE/3D_metagene_plot.py $DATA/metagene_3D/80S_3dmg_start_3Dmeta_end3.csv 
 ```
 ```unix
-python $CODE/3D_metagene_plot.py 80S_3dmg_start_3Dmeta_end5.csv 
+python $CODE/3D_metagene_plot.py $DATA/metagene_3D/80S_3dmg_start_3Dmeta_end5.csv 
 ```
 ```unix
-python $CODE/3D_metagene_plot.py 80S_3dmg_stop_3Dmeta_end3.csv 
+python $CODE/3D_metagene_plot.py $DATA/metagene_3D/80S_3dmg_stop_3Dmeta_end3.csv 
 ```
 ```unix
-python $CODE/3D_metagene_plot.py 80S_3dmg_stop_3Dmeta_end5.csv 
+python $CODE/3D_metagene_plot.py $DATA/metagene_3D/80S_3dmg_stop_3Dmeta_end5.csv 
 ```
 
 
 40S plots:
 ```unix
-python $CODE/3D_metagene_plot.py 40S_3dmg_start_3Dmeta_end3.csv 
+python $CODE/3D_metagene_plot.py $DATA/metagene_3D/40S_3dmg_start_3Dmeta_end3.csv 
 ```
 ```unix
-python $CODE/3D_metagene_plot.py 40S_3dmg_start_3Dmeta_end5.csv 
+python $CODE/3D_metagene_plot.py $DATA/metagene_3D/40S_3dmg_start_3Dmeta_end5.csv 
 ```
 
 ![alt text](https://github.com/guydoshlab/ribofootPrinter2.0-beta/blob/main/Github_tables/settings_3D_metagene_plot.png)
