@@ -1,8 +1,8 @@
-# Step by step guide for MANEv1.4 transcriptome preparation for ribofootprinter
+# Step by step guide for MANEv1.4 transcriptome preparation for *ribofootprinter*
 This code is written in bash and should be executed in the terminal. In addition, a Python script is used to generate the transcriptome. 
 MS Excel is also used for formatting.
 
-Note: The longnames and shortnames FASTA files are uploaded in the output_files folder as zip compressed version.
+Note: The longnames and shortnames FASTA files are uploaded in the output_files folder as zip compressed version and can be downloaded [here](https://github.com/guydoshlab/ribofootPrinter2.0-beta/tree/main/preparation/MANE_v1.4_Preparation/output_files).
 
 # General outline
 1. Download transcriptome files from MANE website (TXT, GBFF, FASTA).
@@ -10,7 +10,7 @@ Note: The longnames and shortnames FASTA files are uploaded in the output_files 
 3. Run Python script "MANE_longnames_formatter.py" to generate longnames transcriptome file which contains ENSEMBL and REFSEQ GeneIDs, GeneNames, 5'-UTR, CDS and 3'-UTR start and end positions, gene length and sequence.
 4. Convert MANE_longnames (used with Ribofootprinter) into MANE_shortnames (used for alignment).
 
-![alt text](https://github.com/kyrakerkhofs/MANE-v1.4/blob/main/MANE%20transcriptome%20preparation.png)
+![alt text](https://github.com/guydoshlab/ribofootPrinter2.0-beta/blob/main/Github_figures/MANE_preparation.png)
 
 
 # 1. Download files from MANE transcriptome website
