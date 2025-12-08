@@ -18,7 +18,7 @@ https://igv.org/doc/desktop/#DownloadPage/
 4. Prepare GTF file from FASTA and CDS_information_refseq text file (or download here from output_files folder) to annotate the CDS of transcripts using Python script MANE_GTF_formatter.py.
 5. Load outputs with IGV.
    
-![alt text](https://github.com/kyrakerkhofs/MANE_v1.4_IGV/blob/main/MANE_IGV_viewing.png)
+![alt text](https://github.com/guydoshlab/ribofootPrinter2.0-beta/blob/main/Github_figures/MANE_IGV_viewing.png)
 
 Note: It is important to that the FASTQ footprints files are aligned against the same transcriptome used for IGV. In this example we use the MANEv1.4_shornames.FASTQ reduced transcriptome for mapping and IGV. 
 
@@ -103,7 +103,7 @@ done
 
 ## Shifting BEDGRAPH files 
 If desired, the optional code below will shift the assigned 5' read positions by +12 which generally aligns with the P-site in riboseq footprints.
-![alt text](https://github.com/kyrakerkhofs/MANE_v1.4_IGV/blob/main/shift.png)
+![alt text](https://github.com/guydoshlab/ribofootPrinter2.0-beta/blob/main/Github_figures/shift.png)
 ```unix
 for i in *.bedgraph;
 do awk '{print $1, $2+12, $3+12, $4}' $i > ${i%.bedgraph}_shiftadd12.bedgraph;
@@ -125,7 +125,7 @@ done
 
 
 # 3. Prepare GTF file using Python script
-![alt text](https://github.com/kyrakerkhofs/MANE_v1.4_IGV/blob/main/MANE_transcriptome_GTF.png)
+![alt text](https://github.com/guydoshlab/ribofootPrinter2.0-beta/blob/main/Github_figures/MANE_transcriptome_GTF.png)
 The GTF file functions as a lookup table and contains information on CDS boundries important to identify footprints outside the coding region. 
 Navigate to folder:
 ```unix
