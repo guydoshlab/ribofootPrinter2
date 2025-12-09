@@ -81,16 +81,16 @@ mkdir -p ./data_files/
 ## Create variables for different paths
 Provide full path to create variables. The full path can be obtained through: 
 ```unix
-pwd
+PATH=$(pwd)
 ```
 
 ```unix
-CODE=/full_path/ribofootPrinter2.0-beta/code
-FASTA=/full_path/ribofootPrinter2.0-beta/preparation/MANE_v1.4_Preparation/output_files
-SAM=/full_path/ribofootPrinter2.0-beta/sam_files
-ROCC=/full_path/ribofootPrinter2.0-beta/rocc_files
-DATA=/full_path/ribofootPrinter2.0-beta/data_files
-FILES=/full_path/ribofootPrinter2.0-beta/associated_files
+CODE=/$PATH/ribofootPrinter2.0-beta/code
+FASTA=/$PATH/ribofootPrinter2.0-beta/preparation/MANE_v1.4_Preparation/output_files
+SAM=/$PATH/ribofootPrinter2.0-beta/sam_files
+ROCC=/$PATH/ribofootPrinter2.0-beta/rocc_files
+DATA=/$PATH/ribofootPrinter2.0-beta/data_files
+FILES=/$PATH/ribofootPrinter2.0-beta/associated_files
 ```
 
 ```unix
