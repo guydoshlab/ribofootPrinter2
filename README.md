@@ -85,12 +85,12 @@ FILEPATH=$(pwd)
 ```
 
 ```unix
-CODE=/$FILEPATH/ribofootPrinter2.0-beta/code
-FASTA=/$FILEPATH/ribofootPrinter2.0-beta/preparation/MANE_v1.4_Preparation/output_files
-SAM=/$FILEPATH/ribofootPrinter2.0-beta/sam_files
-ROCC=/$FILEPATH/ribofootPrinter2.0-beta/rocc_files
-DATA=/$FILEPATH/ribofootPrinter2.0-beta/data_files
-FILES=/$FILEPATH/ribofootPrinter2.0-beta/associated_files
+CODE=/$FILEPATH/code
+FASTA=/$FILEPATH/preparation/MANE_v1.4_Preparation/output_files
+SAM=/$FILEPATH/sam_files
+ROCC=/$FILEPATH/rocc_files
+DATA=/$FILEPATH/data_files
+FILES=/$FILEPATH/associated_files
 ```
 
 ```unix
