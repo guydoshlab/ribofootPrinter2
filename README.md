@@ -136,7 +136,7 @@ python $CODE/builddense.py $FASTA/MANEv1.4_longnames.fasta $SAM/40S.SAM $ROCC/40
 
 ![alt text](https://github.com/guydoshlab/ribofootPrinter2.0-beta/blob/main/Github_figures/writegene2.png)
 
- We used the following settings, and redirect (via > operator) for saving of metadata, for data analysis in this manuscript, generating data on ACTB and EIF4G2 from ROCC files:
+ We used the following settings, and redirect (via > operator) for saving of metadata, for data analysis in this manuscript, generating data on *ACTB* and *EIF4G2 *from ROCC files:
 ```unix
 python $CODE/writegene2.py $ROCC/80S.rocc ACTB $DATA/writegene2/80S_wg2_ACTB > $DATA/writegene2/80S_wg2_ACTB_metadata.txt
 python $CODE/writegene2.py $ROCC/80S.rocc EIF4G2 $DATA/writegene2/80S_wg2_EIF4G2 > $DATA/writegene2/80S_wg2_EIF4G2_metadata.txt
@@ -294,38 +294,38 @@ python $CODE/region_size_and_abundance.py $FASTA/MANEv1.4_longnames.fasta $SAM/4
 
 Ribosome profiling data on start and stop codons:
 ```unix
-python $CODE/3D_metagene.py $FASTA/MANEv1.4_longnames.fasta $SAM/80S.SAM $DATA/metagene_3D/80S_3dmg_start none 25 34 30 75 1 > $DATA/metagene_3D/80S_3dmg_start_metadata.txt
-python $CODE/3D_metagene.py $FASTA/MANEv1.4_longnames.fasta $SAM/80S.SAM $DATA/metagene_3D/80S_3dmg_stop none 25 34 75 30 2 > $DATA/metagene_3D/80S_3dmg_stop_metadata.txt
+python $CODE/metagene_3D.py $FASTA/MANEv1.4_longnames.fasta $SAM/80S.SAM $DATA/metagene_3D/80S_3dmg_start none 25 34 30 75 1 > $DATA/metagene_3D/80S_3dmg_start_metadata.txt
+python $CODE/metagene_3D.py $FASTA/MANEv1.4_longnames.fasta $SAM/80S.SAM $DATA/metagene_3D/80S_3dmg_stop none 25 34 75 30 2 > $DATA/metagene_3D/80S_3dmg_stop_metadata.txt
 ```
 
 40S-seq data on start codons:
 ```unix
-python $CODE/3D_metagene.py $FASTA/MANEv1.4_longnames.fasta $SAM/40S.SAM $DATA/metagene_3D/40S_3dmg_start none 20 80 50 50 1 > $DATA/metagene_3D/40S_3dmg_start_metadata.txt
+python $CODE/metagene_3D.py $FASTA/MANEv1.4_longnames.fasta $SAM/40S.SAM $DATA/metagene_3D/40S_3dmg_start none 20 80 50 50 1 > $DATA/metagene_3D/40S_3dmg_start_metadata.txt
 ```
 ![alt text](https://github.com/guydoshlab/ribofootPrinter2.0-beta/blob/main/Github_tables/settings_3D_metagene.png)
 
 Plots can be generated from the 3D output csv files using the script below that generates a matplotlib window with controls to view/save the metagene image. The read abundance is shown by a color scheme. 
 Ribosome profiling plots:
 ```unix
-python $CODE/3D_metagene_plot.py $DATA/metagene_3D/80S_3dmg_start_3Dmeta_end3.csv 
+python $CODE/metagene_3D_plot.py $DATA/metagene_3D/80S_3dmg_start_3Dmeta_end3.csv 
 ```
 ```unix
-python $CODE/3D_metagene_plot.py $DATA/metagene_3D/80S_3dmg_start_3Dmeta_end5.csv 
+python $CODE/metagene_3D_plot.py $DATA/metagene_3D/80S_3dmg_start_3Dmeta_end5.csv 
 ```
 ```unix
-python $CODE/3D_metagene_plot.py $DATA/metagene_3D/80S_3dmg_stop_3Dmeta_end3.csv 
+python $CODE/metagene_3D_plot.py $DATA/metagene_3D/80S_3dmg_stop_3Dmeta_end3.csv 
 ```
 ```unix
-python $CODE/3D_metagene_plot.py $DATA/metagene_3D/80S_3dmg_stop_3Dmeta_end5.csv 
+python $CODE/metagene_3D_plot.py $DATA/metagene_3D/80S_3dmg_stop_3Dmeta_end5.csv 
 ```
 
 
 40S plots:
 ```unix
-python $CODE/3D_metagene_plot.py $DATA/metagene_3D/40S_3dmg_start_3Dmeta_end3.csv 
+python $CODE/metagene_3D_plot.py $DATA/metagene_3D/40S_3dmg_start_3Dmeta_end3.csv 
 ```
 ```unix
-python $CODE/3D_metagene_plot.py $DATA/metagene_3D/40S_3dmg_start_3Dmeta_end5.csv 
+python $CODE/metagene_3D_plot.py $DATA/metagene_3D/40S_3dmg_start_3Dmeta_end5.csv 
 ```
 
 ![alt text](https://github.com/guydoshlab/ribofootPrinter2.0-beta/blob/main/Github_tables/settings_3D_metagene_plot.png)
