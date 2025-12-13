@@ -38,7 +38,7 @@ openpyxl v3.1.5
 ## Alignment files
 *ribofootPrinter* is compatible with bowtie1 aligned SAM files. We use the bowtie indexed version of the MANEv1.4_shortnames.fasta reduced transcriptome file for alignments (EBWT file extension), found [here](https://github.com/guydoshlab/ribofootPrinter2.0-beta/tree/main/preparation/MANE_v1.4_Preparation/output_files) (unzip before use).
 
-An overview on how to run the different *ribofootPrinter* scripts is listed below. This includes example code which can be used directly on the datasets provided [here](MENDELEY LINK). 
+An overview on how to run the different *ribofootPrinter* scripts is listed below. This includes example code which can be used directly on the datasets provided [here](https://zenodo.org/records/17917807). 
 
 More details on preparation of the MANE transcriptome for alignment (shortnames.FASTA) and ribofootPrinter (longnames.FASTA) can be found [here](https://github.com/guydoshlab/ribofootPrinter2.0-beta/tree/main/preparation/MANE_v1.4_Preparation/).
 
@@ -73,8 +73,7 @@ mkdir -p ./rocc_files/
 mkdir -p ./data_files/ 
 mkdir -p ./sam_files/
 ```
-```unix
-```
+
 
 ## Create variables for different paths
 Provide full path to create variables. The full path can be obtained through: 
