@@ -40,11 +40,6 @@ openpyxl v3.1.5
 
 An overview on how to run the different *ribofootPrinter* scripts is listed below. This includes example code which can be used directly on the datasets provided [here](MENDELEY LINK). 
 
-Create a new directory in the ribofootPrinter folder and download the SAM files here:
-```unix
-mkdir -p ./sam_files/
-```
-
 More details on preparation of the MANE transcriptome for alignment (shortnames.FASTA) and ribofootPrinter (longnames.FASTA) can be found [here](https://github.com/guydoshlab/ribofootPrinter2.0-beta/tree/main/preparation/MANE_v1.4_Preparation/).
 
 More details how to view your aligned reads in IGV can be found [here](https://github.com/guydoshlab/ribofootPrinter2.0-beta/tree/main/preparation/MANE_v1.4_IGV).
@@ -76,6 +71,9 @@ The remaining scripts use SAM files as input files (ROCC file generation not req
 ```unix
 mkdir -p ./rocc_files/
 mkdir -p ./data_files/ 
+mkdir -p ./sam_files/
+```
+```unix
 ```
 
 ## Create variables for different paths
@@ -96,16 +94,24 @@ FILES=/$FILEPATH/associated_files
 ```unix
 mkdir -p ./data_files/writegene2 ./data_files/metagene ./data_files/genelist ./data_files/smorflist ./data_files/posavg ./data_files/posstats ./data_files/region_size_and_abundance ./data_files/metagene_3D
 ```
+## Download SAM files:
+```unix
+wget https://zenodo.org/records/17917807/files/40S.SAM.zip
+wget https://zenodo.org/records/17917807/files/80S.SAM.zip
+```
+
 
 ## Unzip files
 ```unix
 for file in $FASTA/*.zip; do unzip $file; done
 for file in $FILES/*.zip; do unzip $file; done
+for file in $SAM/*.zip; do unzip $file; done
 ```
 ```unix
 mv *.fasta $FASTA
 mv *.ebwt $FASTA  
 mv *.xlsx $FILES 
+mv *.SAM $SAM
 ```
 
 
