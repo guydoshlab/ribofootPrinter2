@@ -219,7 +219,7 @@ python $CODE/metagene.py $ROCC/80S.rocc 1 1 5 50 300 none $DATA/metagene/80S_mg_
 python $CODE/metagene.py $ROCC/80S.rocc 2 1 5 300 50 none $DATA/metagene/80S_mg_stop > $DATA/metagene/80S_mg_stop_metadata.txt
 ```
 
-The subset excel file to limit analysis to genes with predicted uORFs. Setting to generate metagene plots from uORF-containing genes:
+The subset excel file limits analysis to genes with predicted uORFs. Settings to generate metagene plots from predicted uORF-containing genes:
 
 ```unix
 python $CODE/metagene.py $ROCC/80S.rocc 1 1 5 50 300 $FILES/subset_list.xlsx $DATA/metagene/80S_mg_start_subset > $DATA/metagene/80S_mg_start_subset_metadata.txt
