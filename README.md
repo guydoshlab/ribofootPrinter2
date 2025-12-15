@@ -3,7 +3,7 @@ ribofootPrinter2 is a package of Python 3 tools for analyzing data from ribosome
 
 ribofootPrinter2 adds support for version 1.4 of the MANE transcriptome. It updates the functionality of all the previous core tools and adds several new capabilities. For guidance on use of the package, please see the associated manuscript on bioRxiv: https://www.biorxiv.org/content/10.1101/2021.07.04.451082
 
-We reccomend going to the "releases" page and downloading a zip file of the last stable release for use. Releases are also archived on Zenodo. If there are code updates since the last formal release, they will be available here on the main page as a beta version (not fully tested).
+We recommend going to the "releases" page and downloading a zip file of the last stable release for use. Releases are also archived on Zenodo. If there are code updates since the last formal release, they will be available here on the main page as a beta version (not fully tested).
 
 # Download ribofootPrinter from Github
 To begin, we suggest starting with the entire *ribofootPrinter* folder that is created after downloading and unzipping the compressed file available on the releases page. 
@@ -12,7 +12,7 @@ Move the folder to a convenient place to work with it (such as your home directo
 ```unix
 pwd
 ```
-You should see the prompt return the name of the folder: ribofootPrinter2.1
+You should see the prompt return the name of the folder: ribofootPrinter2-main
 
 # Requirements for running ribofootPrinter
 ## Environment
@@ -92,11 +92,11 @@ FILES=/$FILEPATH/associated_files
 ```unix
 mkdir -p ./data_files/writegene2 ./data_files/metagene ./data_files/genelist ./data_files/smorflist ./data_files/posavg ./data_files/posstats ./data_files/region_size_and_abundance ./data_files/metagene_3D
 ```
-## Download SAM files:
-```unix
-wget https://zenodo.org/records/17917807/files/40S.SAM.zip
-wget https://zenodo.org/records/17917807/files/80S.SAM.zip
-```
+## Download zipped SAM files and place them in the sam_files folder.
+The example SAM files are available here:<br>
+https://zenodo.org/records/17917807/files/40S.SAM.zip<br>
+https://zenodo.org/records/17917807/files/80S.SAM.zip
+
 
 
 ## Unzip files
