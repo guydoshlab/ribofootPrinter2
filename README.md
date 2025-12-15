@@ -12,7 +12,7 @@ Move the folder to a convenient place to work with it (such as your home directo
 ```unix
 pwd
 ```
-You should see the prompt return the name of the folder: ribofootPrinter2-main
+You should see the prompt return the name of the folder.
 
 # Requirements for running ribofootPrinter
 ## Environment
