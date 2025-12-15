@@ -263,7 +263,7 @@ python $CODE/posstats.py $ROCC/80S.rocc AAA 1 0 10 1 12 1 $DATA/posstats/80S_ps_
 
 
 ## SCRIPT 8. Run *region_size_and_abundance* from SAM files
-*region_size_and_abundance* outputs the number of reads that aligned to each transcript feature (i.e. UTRs, ORF, start and stop codon) for different read lengths. The saved output consists of a csv file that includes separate sections for read length distributions (left; raw counts for each of the 5 transcript regions) and multiple kinds of abundance measurement for each transcript region (right; can be used to normalize the read length distributions by multiplying the raw count values). 
+*region_size_and_abundance* outputs the number of reads that aligned to each transcript feature (i.e. 5'-UTR, 3'-UTR, main ORF, start codon, and stop codon) as a function of read length. The saved output consists of a csv file that includes separate sections for read length distributions (left; raw counts for each of the 5 transcript regions) and multiple kinds of abundance measurement for each transcript region (right; can be used to normalize the read length distributions by multiplying the raw count values). 
 ![alt text](https://github.com/guydoshlab/ribofootPrinter2/blob/main/Github_figures/rsa2.png)
 
 The window parameter can be adjusted. This setting determines the regions around the start and stop codon in which a mapped read needs to overlap:
@@ -291,7 +291,7 @@ python $CODE/region_size_and_abundance.py $FASTA/MANEv1.4_longnames.fasta $SAM/4
 
 
 ## SCRIPT 9. Run *metagene_3D* from SAM files
-*metagene_3D* averages reads around start or stop codons as a function of read length. The output consists of 2 csv files with 3-D metagene data (5’- and 3’-assigned reads) and 1 csv file with conventional metagene data (both 5’- and 3’-assigned included). The example code below generates plots around start codons. Plots are created for both 5’- and 3’-assigned reads. 
+*metagene_3D* averages reads around start or stop codons as a function of read length. The output consists of 2 csv files with 3-D metagene data (one file each for 5’- and 3’-assigned reads) and 1 csv file with conventional metagene data (both 5’- and 3’-assigned included in the file). The example code below generates plots around start codons. Plots are created for both 5’- and 3’-assigned reads. 
 
 ![alt text](https://github.com/guydoshlab/ribofootPrinter2/blob/main/Github_figures/3D_metagene.png)
 
@@ -308,7 +308,7 @@ python $CODE/metagene_3D.py $FASTA/MANEv1.4_longnames.fasta $SAM/40S.SAM $DATA/m
 ![alt text](https://github.com/guydoshlab/ribofootPrinter2/blob/main/Github_tables/settings_3D_metagene.png)
 
 Plots can be generated from the 3D output csv files using the script below that generates a matplotlib window with controls to view/save the metagene image. The read abundance is shown by a color scheme. 
-Ribosome profiling plots:
+Ribosome profiling (80S) plots:
 ```unix
 python $CODE/metagene_3D_plot.py $DATA/metagene_3D/80S_3dmg_start_3Dmeta_end3.csv 
 ```
