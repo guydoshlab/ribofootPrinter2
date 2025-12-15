@@ -179,8 +179,7 @@ For this analysis, the 5'-end aligned data are shifted to accommodate the P-site
 
 ![alt text](https://github.com/guydoshlab/ribofootPrinter2/blob/main/Github_figures/posavg1.png)
 
-We used the following settings, and redirect (via the > operator) to save metadata, for data analysis:
-Calculation of pause scores for all amino acids in the main frame for the CDS:
+We used the following settings, and redirect (via the > operator) to save metadata, for data analysis to calculate pause scores for all amino acids in the main frame of the CDS:
 ```unix
 python $CODE/posavg.py $ROCC/80S.rocc all_1 1 0 0 30 0 12 1 none $DATA/posavg/80S_pa_all_1_aa_CDS_frame0 > $DATA/posavg/80S_pa_all_1_aa_CDS_frame0_metadata.txt
 ```
