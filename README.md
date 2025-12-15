@@ -179,20 +179,20 @@ For this analysis, the 5'-end aligned data are shifted to accommodate the P-site
 
 ![alt text](https://github.com/guydoshlab/ribofootPrinter2/blob/main/Github_figures/posavg1.png)
 
-We used the following settings, and redirect (via the > operator) to save metadata, for data analysis to calculate pause scores for all amino acids in the main frame of the CDS:
+We used the following settings, and redirect (via the > operator) to save metadata, for data analysis to calculate pause scores for all amino acids in the ribosome P-site in the main frame of the CDS:
 ```unix
 python $CODE/posavg.py $ROCC/80S.rocc all_1 1 0 0 30 0 12 1 none $DATA/posavg/80S_pa_all_1_aa_CDS_frame0 > $DATA/posavg/80S_pa_all_1_aa_CDS_frame0_metadata.txt
 ```
 
 ![alt text](https://github.com/guydoshlab/ribofootPrinter2/blob/main/Github_figures/posavg2.png)
 
-uORF analysis with different normalization settings:
+ATG triplets in 5'-UTRs (uORF analysis) with different normalization settings:
 ```unix
 python $CODE/posavg.py $ROCC/80S.rocc ATG 0 3 0 30 0 12 0 none $DATA/posavg/80S_pa_ATG_UTR5_allframe_norm0 > $DATA/posavg/80S_pa_uORF_norm0_metadata.txt 
 python $CODE/posavg.py $ROCC/80S.rocc ATG 0 3 0 30 1 12 0 none $DATA/posavg/80S_pa_ATG_UTR5_allframe_norm1 > $DATA/posavg/80S_pa_uORF_norm1_metadata.txt 
 ```
 
-dORF analysis with different normalization settings:
+ATG triplets in 3'-UTRs (dORF analysis) with different normalization settings:
 ```unix
 python $CODE/posavg.py $ROCC/80S.rocc ATG 0 3 0 30 0 12 2 none $DATA/posavg/80S_pa_ATG_UTR3_allframe_norm0 > $DATA/posavg/80S_pa_dORF_norm0_metadata.txt 
 python $CODE/posavg.py $ROCC/80S.rocc ATG 0 3 0 30 1 12 2 none $DATA/posavg/80S_pa_ATG_UTR3_allframe_norm1 > $DATA/posavg/80S_pa_dORF_norm1_metadata.txt 
