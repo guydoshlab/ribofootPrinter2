@@ -23,7 +23,7 @@ https://igv.org/doc/desktop/#DownloadPage/
 Note: It is important to that the FASTQ footprints files are aligned against the same transcriptome used for IGV. In this example we use the MANEv1.4_shornames.FASTQ reduced transcriptome for mapping and IGV. 
 
 # Setting up the environment:
-SAM files should be converted to sorted BAM files using samtools. This can be done locally using a virtual environment, such as Anaconda, but not required. 
+SAM files should be converted to sorted BAM files using samtools. See the samtools website for download and install instructions. This can be done locally using a virtual environment, such as Anaconda, but not required. 
 Reference for Anaconda: https://github.com/conda/conda?tab=readme-ov-file.
 Details for Anaconda follow.
 ## Generate conda environment (only once)
