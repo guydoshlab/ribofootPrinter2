@@ -114,9 +114,10 @@ MANE_longnames is used for Ribofootprinter, while MANE_shortnames is used for ma
 sed -r 's/\|.+//' MANEv1.4_longnames.fasta > MANEv1.4_shortnames.fasta
 ```
 
+For alignments, bowtie executable can be run from the command line following download. Alternatively, it can be installed with Anaconda: https://anaconda.org/bioconda/bowtie
+
 Bowtie requires a Bowtie index for sequence alignments. This will generate 6 files with suffixes .1.ebwt, .2.ebwt, .3.ebwt, .4.ebwt, .rev.1.ebwt, and .rev.2.ebwt. These are the only files required for alignments. The original fasta file will not be used.
 
-Install Bowtie with Anaconda: https://anaconda.org/bioconda/bowtie
 ```unix
 bowtie-build MANEv1.4_shortnames.fasta MANEv1.4
 ```
