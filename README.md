@@ -18,7 +18,7 @@ You should see the prompt return the name of the folder: ribofootPrinter2.1
 ## Environment
 We run the Python toolbox ribofootPrinter locally inside a virtual environment. 
 
-A virtual environment can be created using the Python *venv* command (i.e. *python -m venv venv*). The .py files can then be copied to the site-packages folder associated with the virtual environment to facilitate their use. Other needed packages (below) can be installed with *pip*.
+A virtual environment can be created using the Python *venv* command (i.e. *python -m venv venv*). The .py files can then be copied to the site-packages folder associated with the virtual environment to facilitate use. Other needed packages (below) can be installed with *pip*.
 
 Alternatively, the conda package manager can be used to handle the virtual environment.
 
