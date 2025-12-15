@@ -6,7 +6,7 @@ ribofootPrinter2 adds support for version 1.4 of the MANE transcriptome. It upda
 We reccomend going to the "releases" page and downloading a zip file of the last stable release for use. Releases are also archived on Zenodo. If there are code updates since the last formal release, they will be available here on the main page as a beta version (not fully tested).
 
 # Download ribofootPrinter from Github
-To begin, we suggest starting with the entire *ribofootPrinter* folder that is created after downloading and unzipping the zip file available on the releases page. 
+To begin, we suggest starting with the entire *ribofootPrinter* folder that is created after downloading and unzipping the compressed file available on the releases page. 
 
 Move the folder to a convenient place to work with it (such as your home directory) and navigate to the folder from the command line using the *cd* comand. Test this by typing the following:
 ```unix
