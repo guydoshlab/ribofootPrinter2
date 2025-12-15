@@ -6,21 +6,15 @@ ribofootPrinter2 adds support for version 1.4 of the MANE transcriptome. It upda
 We recommend going to the "releases" page and downloading a zip file of the last stable release for use. Releases are also archived on Zenodo. If there are code updates since the last formal release, they will be available here on the main page as a beta version (not fully tested).
 
 # Download ribofootPrinter from Github
-To begin, we suggest starting with the entire *ribofootPrinter* folder that is created after downloading and unzipping the compressed file available on the releases page. 
+To begin, we suggest starting with the entire *ribofootPrinter2* folder that is created after downloading and unzipping the compressed file available on the releases page. The folder can also be downloaded by using the *git* command.
 
-Move the folder to a convenient place to work with it (such as your home directory) and navigate to the folder from the command line using the *cd* comand. Test this by typing the following:
 ```unix
-pwd
+git clone https://github.com/guydoshlab/ribofootPrinter2.1
 ```
-You should see the prompt return the name of the folder.
-
+Move the folder to a convenient place to work with it (such as your home directory) and navigate to the folder from the command line using the *cd* command.
 # Requirements for running ribofootPrinter
 ## Environment
-We run the Python toolbox ribofootPrinter locally inside a virtual environment. 
-
-A virtual environment can be created using the Python *venv* command (i.e. *python -m venv venv*). The .py files can then be copied to the site-packages folder associated with the virtual environment to facilitate use. Other needed packages (below) can be installed with *pip*.
-
-Alternatively, the conda package manager can be used to handle the virtual environment.
+We run the Python toolbox ribofootPrinter locally inside a virtual environment.
 
 The ribofootPrinter package has the following dependencies:
 
