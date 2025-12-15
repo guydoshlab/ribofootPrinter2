@@ -1,29 +1,20 @@
-# This page is currently under construction
-
 # ribofootPrinter2.1
 ribofootPrinter2 is a package of Python 3 tools for analyzing data from ribosome profiling and other RNA-based sequencing experiments. This is a new version of the original ribofootPrinter that adds support for version 1.4 of the MANE transcriptome. It updates the functionality of all the previous core tools and adds several new capabilities. For guidance on use of the package, please see the associated manuscript on bioRxiv: https://www.biorxiv.org/content/10.1101/2021.07.04.451082
 
-
-
+We reccomend going to the "releases" page and downloading a zip file of the last stable release for use. Releases are also archived on Zenodo. If there are code updates since the last formal release, they will be available here on the main page as a beta version (not fully tested).
 
 # Download ribofootPrinter from Github
-We suggest to download the entire *ribofootPrinter* folder from Github. 
+To begin, we suggest starting with the entire *ribofootPrinter* folder that is created after downloading and unzipping the file available on the releases page. 
 
-## Download
-You can either download ribofootPrinter manually from the [main Github page](https://github.com/guydoshlab/ribofootPrinter2.0-beta) or copy the entire folder as follows:
+Following download and unzipping, move the folder to a convenient place to work with it (such as your home directory) and navigate to the folder from the command line. Test this by typing the follwing:
 ```unix
-git clone https://github.com/guydoshlab/ribofootPrinter2.0-beta/
+pwd
 ```
-
-Following download, navigate to the folder:
-```unix
-cd ./ribofootPrinter2.0-beta/
-```
-
+You should see the prompt return the name of the folder: ribofootPrinter2.1
 
 # Requirements for running ribofootPrinter
 ## Environment
-We run the Python toolbox ribofootPrinter locally inside a conda generated virtual environment using the terminal which has following dependencies installed:
+We run the Python toolbox ribofootPrinter locally inside a virtual environment. A virtual environment can be created using the Python 3 *venv* command. The ribofootPrinter "code" folder can then be copied to the site-packages folder of the virtual environment or placed in the path. Other needed packages can be installed with *pip*. Optionally, the conda package manager can be used to handle the environment. The ribofootPrinter package has the following dependencies:
 
 python v3.9.23
 
@@ -38,13 +29,13 @@ numpy v2.0.2
 openpyxl v3.1.5
 
 ## Alignment files
-*ribofootPrinter* is compatible with bowtie1 aligned SAM files. We use the bowtie indexed version of the MANEv1.4_shortnames.fasta reduced transcriptome file for alignments (EBWT file extension), found [here](https://github.com/guydoshlab/ribofootPrinter2.0-beta/tree/main/preparation/MANE_v1.4_Preparation/output_files) (unzip before use).
+*ribofootPrinter* is compatible with bowtie1 aligned SAM files. We use the bowtie indexed version of the MANEv1.4_shortnames.fasta reduced transcriptome file for alignments (EBWT file extension), found [here](https://github.com/guydoshlab/ribofootPrinter2.1/tree/main/preparation/MANE_v1.4_Preparation/output_files) (unzip before use).
 
-An overview on how to run the different *ribofootPrinter* scripts is listed below. This includes example code which can be used directly on the datasets provided [here](https://zenodo.org/records/17917807). 
+An overview on how to run the different *ribofootPrinter* scripts is listed below. This includes example code which can be used directly on the data files (SAM and ROCC) provided [here](https://zenodo.org/records/17917807). 
 
-More details on preparation of the MANE transcriptome for alignment (shortnames.FASTA) and ribofootPrinter (longnames.FASTA) can be found [here](https://github.com/guydoshlab/ribofootPrinter2.0-beta/tree/main/preparation/MANE_v1.4_Preparation/).
+More details on preparation of the MANE transcriptome for alignment (shortnames FASTA file) and ribofootPrinter (longnames FASTA file) can be found [here](https://github.com/guydoshlab/ribofootPrinter2.1/tree/main/preparation/MANE_v1.4_Preparation/).
 
-More details how to view your aligned reads in IGV can be found [here](https://github.com/guydoshlab/ribofootPrinter2.0-beta/tree/main/preparation/MANE_v1.4_IGV).
+More details how to view your aligned reads in IGV can be found [here](https://github.com/guydoshlab/ribofootPrinter2.1/tree/main/preparation/MANE_v1.4_IGV).
 
 # Running the *ribofootPrinter* package
 All scripts are run in the terminal by calling python and providing the python script and settings as described below. An overview of the different settings is provided in table format for each script.
