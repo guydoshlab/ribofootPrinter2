@@ -8,7 +8,7 @@ We reccomend going to the "releases" page and downloading a zip file of the last
 # Download ribofootPrinter from Github
 To begin, we suggest starting with the entire *ribofootPrinter* folder that is created after downloading and unzipping the zip file available on the releases page. 
 
-Following download and unzipping, move the folder to a convenient place to work with it (such as your home directory) and navigate to the folder from the command line using the *cd* comand. Test this by typing the follwing:
+Move the folder to a convenient place to work with it (such as your home directory) and navigate to the folder from the command line using the *cd* comand. Test this by typing the following:
 ```unix
 pwd
 ```
