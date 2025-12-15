@@ -1,5 +1,5 @@
 # ribofootPrinter2.1
-ribofootPrinter2 is a package of Python 3 tools for analyzing data from ribosome profiling and other RNA-based sequencing experiments. This is a new version of the [first ribofootPrinter package](https://github.com/guydoshlab/ribofootPrinter), which was originally based on the [ReducedTranscriptome package](https://github.com/guydoshlab/ReducedTranscriptome). 
+ribofootPrinter2 is a package of Python 3 tools for analyzing data from ribosome profiling and other RNA-based sequencing experiments. This is a new version of the [first ribofootPrinter](https://github.com/guydoshlab/ribofootPrinter) package, which was originally based on the [ReducedTranscriptome](https://github.com/guydoshlab/ReducedTranscriptome) package. 
 
 ribofootPrinter2 adds support for version 1.4 of the MANE transcriptome. It updates the functionality of all the previous core tools and adds several new capabilities. For guidance on use of the package, please see the associated manuscript on bioRxiv: https://www.biorxiv.org/content/10.1101/2021.07.04.451082
 
