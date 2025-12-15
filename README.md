@@ -25,15 +25,10 @@ Alternatively, the conda package manager can be used to handle the virtual envir
 The ribofootPrinter package has the following dependencies:
 
 python v3.9.23
-
 biopython v1.85
-
 matplotlib v3.9.4
-
 pandas v2.3.2
-
 numpy v2.0.2
-
 openpyxl v3.1.5
 
 ## Alignment files
