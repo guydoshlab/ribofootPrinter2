@@ -175,7 +175,7 @@ For this analysis, the 5'-end aligned data are shifted to accommodate the P-site
 
 
 ## SCRIPT 4. Run *posavg* from ROCC files
-*posavg* averages ribosome profiling data around any sequence feature of interest or computes a pause score for every occurrence of a nucleotide or amino-acid motif of a given length. 
+*posavg* averages ribosome profiling data around any sequence feature of interest or computes a pause score for every nucleotide or amino-acid combination for a sequence of given length. 
 
 ![alt text](https://github.com/guydoshlab/ribofootPrinter2/blob/main/Github_figures/posavg1.png)
 
