@@ -1,12 +1,14 @@
 # ribofootPrinter2.1
-ribofootPrinter2 is a package of Python 3 tools for analyzing data from ribosome profiling and other RNA-based sequencing experiments. This is a new version of the [first ribofootPrinter package](https://github.com/guydoshlab/ribofootPrinter), which was originally based on the [ReducedTranscriptome package](https://github.com/guydoshlab/ReducedTranscriptome). ribofootPrinter2 adds support for version 1.4 of the MANE transcriptome. It updates the functionality of all the previous core tools and adds several new capabilities. For guidance on use of the package, please see the associated manuscript on bioRxiv: https://www.biorxiv.org/content/10.1101/2021.07.04.451082
+ribofootPrinter2 is a package of Python 3 tools for analyzing data from ribosome profiling and other RNA-based sequencing experiments. This is a new version of the [first ribofootPrinter package](https://github.com/guydoshlab/ribofootPrinter), which was originally based on the [ReducedTranscriptome package](https://github.com/guydoshlab/ReducedTranscriptome). 
+
+ribofootPrinter2 adds support for version 1.4 of the MANE transcriptome. It updates the functionality of all the previous core tools and adds several new capabilities. For guidance on use of the package, please see the associated manuscript on bioRxiv: https://www.biorxiv.org/content/10.1101/2021.07.04.451082
 
 We reccomend going to the "releases" page and downloading a zip file of the last stable release for use. Releases are also archived on Zenodo. If there are code updates since the last formal release, they will be available here on the main page as a beta version (not fully tested).
 
 # Download ribofootPrinter from Github
-To begin, we suggest starting with the entire *ribofootPrinter* folder that is created after downloading and unzipping the file available on the releases page. 
+To begin, we suggest starting with the entire *ribofootPrinter* folder that is created after downloading and unzipping the zip file available on the releases page. 
 
-Following download and unzipping, move the folder to a convenient place to work with it (such as your home directory) and navigate to the folder from the command line. Test this by typing the follwing:
+Following download and unzipping, move the folder to a convenient place to work with it (such as your home directory) and navigate to the folder from the command line using the *cd* comand. Test this by typing the follwing:
 ```unix
 pwd
 ```
@@ -14,9 +16,9 @@ You should see the prompt return the name of the folder: ribofootPrinter2.1
 
 # Requirements for running ribofootPrinter
 ## Environment
-We run the Python toolbox ribofootPrinter locally inside a virtual environment. A virtual environment is created using the Python 3 *venv* command (i.e. *python3 -m venv venv*). The ribofootPrinter code (.py files) can be copied to the site-packages folder of the virtual environment to facilitate use from any folder. Other needed packages (below) can be installed with *pip*.
+We run the Python toolbox ribofootPrinter locally inside a virtual environment. A virtual environment can be created using the Python 3 *venv* command (i.e. *python3 -m venv venv*). The ribofootPrinter code (.py files) can then be copied to the site-packages folder associated with the virtual environment to facilitate their use from any folder. Other needed packages (below) can be installed with *pip*.
 
-Alternatively, the conda package manager can be used to handle the environment.
+Alternatively, the conda package manager can be used to handle the virtual environment.
 
 The ribofootPrinter package has the following dependencies:
 
