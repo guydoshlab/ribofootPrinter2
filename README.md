@@ -140,7 +140,7 @@ python $CODE/builddense.py $FASTA/MANEv1.4_longnames.fasta $SAM/40S.SAM $ROCC/40
 
 ![alt text](https://github.com/guydoshlab/ribofootPrinter2/blob/main/Github_figures/writegene2.png)
 
- We used the following settings, and redirect (via the > operator) to save metadata, for data analysis to generate csv files with data for *ACTB* and *EIF4G2 *from ROCC files:
+ We used the following settings, and redirect (via the > operator) to save metadata, for data analysis to generate csv files with data for *ACTB* and *EIF4G2* from ROCC files:
 ```unix
 python $CODE/writegene2.py $ROCC/80S.rocc ACTB $DATA/writegene2/80S_wg2_ACTB > $DATA/writegene2/80S_wg2_ACTB_metadata.txt
 python $CODE/writegene2.py $ROCC/80S.rocc EIF4G2 $DATA/writegene2/80S_wg2_EIF4G2 > $DATA/writegene2/80S_wg2_EIF4G2_metadata.txt
