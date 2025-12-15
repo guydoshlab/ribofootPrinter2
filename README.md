@@ -29,7 +29,7 @@ biopython v1.85\
 matplotlib v3.9.4\
 pandas v2.3.2\
 numpy v2.0.2\
-openpyxl v3.1.5\
+openpyxl v3.1.5
 
 ## Alignment files
 *ribofootPrinter* is compatible with bowtie1 aligned SAM files. We use the bowtie indexed version of the MANEv1.4_shortnames.fasta reduced transcriptome file for alignments (EBWT file extension), found [here](https://github.com/guydoshlab/ribofootPrinter2/tree/main/preparation/MANE_v1.4_Preparation/output_files) (unzip before use).
