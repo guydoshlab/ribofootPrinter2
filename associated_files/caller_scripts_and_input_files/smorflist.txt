@@ -1,0 +1,32 @@
+# Input file for smorf list.
+# Place input under each input param below:
+#
+#
+ 
+# This is the threshold of amino acids. Must be longer than this. Negative is only this.
+INPUT_lengththresh
+4
+ 
+INPUT_shift
+12
+
+# Put 1 to keep smallest ORF (last start codon). Put 0 for longest.
+INPUT_smallest
+0
+
+ 
+# This is how many mismatches to allow in start codon (1 or 0).
+INPUT_mismatches
+0
+
+# This is whether to do 5'UTR or 3'UTR (5 or 3).
+INPUT_UTR
+5
+
+# rocc file that contains the read alignment and sequence data
+INPUT_inputfiles
+80S.rocc
+ 
+# Name of the output file (doesn't need .csv extension)
+INPUT_outfile
+80S_uorflist

@@ -1,0 +1,42 @@
+# Input file for metagene_3D.
+# Place input under each input param below:
+#
+#
+
+
+# fasta file that contains the sequence
+INPUT_fastain
+MANEv1.4_longnames.fasta
+
+# SAM file that contains the read alignment
+INPUT_samin
+40S.SAM
+
+# Name of the output file (doesn't need .csv extension)
+INPUT_outfile
+40S_3dmg_start
+
+#These next two are the upper and lower ranges of read sizes included.
+INPUT_smallsize
+20
+
+INPUT_largesize
+80
+
+# These next two set the size of the window in the average in nt.
+INPUT_windowleft
+50
+
+INPUT_windowright
+50
+
+
+#This determines whether doing a start or stop metagene (1 vs 2).
+INPUT_metagene
+1
+
+# Excel file with column of genes you want analyzed; if not needed, put none
+INPUT_subsetlist
+none
+
+

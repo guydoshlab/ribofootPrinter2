@@ -1,0 +1,16 @@
+# Input file for writegene2.
+# Place input under each input param below:
+#
+#
+
+# Comma separated gene names in ENSG... format. It can also tolerate aliases, like ACTB.
+INPUT_genenames
+ACTB,EIF4G2
+
+# rocc file that contains the read alignment and sequence data
+INPUT_inputfiles
+80S.rocc
+
+# Name of the output file (doesn't need .csv extension)
+INPUT_outfile
+80S_wg2_ACTB_EIF4G2

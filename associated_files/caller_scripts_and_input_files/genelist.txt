@@ -1,0 +1,19 @@
+# Input file for genelist.
+# Place input under each input param below:
+#
+#
+
+INPUT_shift
+12
+
+# Setting this variable to 1 will output an extra file with CDS reads broken down by frame. 
+INPUT_doextra
+0
+
+# rocc file that contains the read alignment and sequence data
+INPUT_inputfiles
+80S.rocc,40S.rocc
+
+# Name of the output file (doesn't need .csv extension)
+INPUT_outfile
+40S_80S_gl
