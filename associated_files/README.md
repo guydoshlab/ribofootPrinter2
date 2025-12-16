@@ -12,6 +12,3 @@ To facilitate input data organization, it is recommended to use some kind caller
 nohup python writegene2_caller.py writegene2_EIF4G2.txt > 80S_wg2_EIF4G2_metadata.txt 2>&1 &
 ```
 The *nohup* command (and related character string at the end) allows it to run in the background. 
-
-## Parallelization
-To parallelize running of ribofootPrinter, bash scripts can be created to include multiple python commands.
