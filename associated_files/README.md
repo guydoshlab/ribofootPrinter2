@@ -7,7 +7,7 @@ subset_list.xlsx - this is an example of a subset gene list of genes with predic
 subset_list_EIF4G.xlsx - this is a subset list that includes a single gene, EIF4G2.
 
 ## caller_scripts_and_input_files
-To facilitate input data organization, it is recommended to use some kind caller (i.e. wrapper) functions to run the code. the text files and the .py caller functions here can optionally facilitate this. As an example, the writegene2 function is run this way:
+To facilitate input data organization, it is recommended to use some kind caller (i.e. wrapper) functions to run the code. The text files and the .py caller functions here can optionally facilitate this. As an example, the writegene2 function is run this way:
 ```unix
 nohup python writegene2_caller.py writegene2_EIF4G2.txt > 80S_wg2_EIF4G2_metadata.txt 2>&1 &
 ```
