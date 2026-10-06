@@ -1,6 +1,6 @@
 import csv
 import sys
-import tools
+import ribofootprintertools as tools
 from Bio import Seq
 
 
@@ -117,11 +117,12 @@ def smorflist(
 	footprints=rocc_load[0]
 	samplename=rocc_load[1]
 	endmode=rocc_load[2]
-	if endmode=="all_3":
+	shift=int(shift)
+	if endmode=="all_3" or shift<0:
 		print("ERROR - right now the genelist code doesn't support anything except end5 or cov.")
 		exit()
 
-	shift=int(shift)
+	
 	genelist={}
 	######
 	genelist["headers"]=["alias","UTR5len","CDSlen","UTR3len","transcriptlen","smallorfseq","smallorfaa","sm_orfstartinUTR","sm_orfstopinUTR","sm_orf_"+samplename,"CDS_"+samplename]
@@ -140,8 +141,7 @@ def smorflist(
 				continue
 				
 		if int(UTR)==3:
-			
-			counts=footprints[gene][2][endmode][UTR3start-shift:-shift]
+			counts=footprints[gene][2][endmode][UTR3start-shift:-shift or None]
 			genesequence=footprints[gene][1][UTR3start:]
 		else:	
 			counts=footprints[gene][2][endmode][0:ORFstart-shift]

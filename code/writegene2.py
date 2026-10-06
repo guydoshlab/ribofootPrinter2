@@ -1,6 +1,6 @@
 import csv
 import sys
-import tools # This is the accompanying tools file with helper functions.
+import ribofootprintertools as tools # This is the accompanying tools file with helper functions.
 
 #### This writegene2 script writes out reads on genes to a csv file to be used, for example, to make figures.
 # Inputs:

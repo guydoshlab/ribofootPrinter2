@@ -1,7 +1,7 @@
 import csv
 import sys
 import re
-import tools
+import ribofootprintertools as tools
 
 ### This metagene script counts reads on genes.
 # Inputs:
@@ -13,7 +13,7 @@ import tools
 # range3 - the 3' window of the metagene.
 # subsetlist - excel file with column of genes you want in the average; if no filtering is required put "none".
 # outfile - name of the csv file root (no extension) that will be the output of the reads.
-# Note this function is currently not compatible with 3' end aligned reads since those require negative shifts, so only "all_5" or "cov"
+# Note this function is compatiable with any endmode option.
 def main(inputfiles,kind,weighting,genethresh,range5,range3,subsetlist,outfile):
 	print("\nName of python script:",(__file__.split("/")[-1]))
 	print("Total arguments passed:", len(locals()))
@@ -60,11 +60,6 @@ def metagene(
 	footprints=rocc_load[0]
 	samplename=rocc_load[1]
 	endmode=rocc_load[2]
-	if endmode=="all_3":
-		print("ERROR - right now the genelist code doesn't support anything except end5 or cov.")
-		exit()
-	if endmode=="cov" and shift!=0: 
-		print("Warning, coverage being used without a shift of 0.")
 	
 	# kind is either 1 or 2 (1 for start codons, 2 for stop codons; other features can come later).
 	kind=int(kind)
@@ -87,14 +82,31 @@ def metagene(
 		UTR3start=int(footprints[gene][4])
 		
 		# For thresholding and equalweighting, need an rpkm value of the gene.
-		# This calculation assumes no end effects on ends of genes (can be done to control for stop/stop peaks) and a shift of 12.
-		if (UTR3start-ORFstart)<=0 or ORFstart<12 or (len(footprints[gene][2][endmode])-UTR3start)<12:	# Eliminate genes with no ORF or a UTR so short that reads would not align at ends of ORF.
-			continue
-		else:
-			ORFcounts=(sum(footprints[gene][2][endmode][ORFstart+0-12:UTR3start-0-12]))/((UTR3start-ORFstart-0)/1000)	# This is the rpkm value of the gene.
-			if ORFcounts<genethresh:
+		# This calculation assumes no end effects on ends of genes (can be done to control for stop/stop peaks) and a shift of 12 for 5' aligned, 16 for 3' end aligned.
+		if endmode=="all_5":
+			if (UTR3start-ORFstart)<=0 or ORFstart<12 or (len(footprints[gene][2][endmode])-UTR3start)<12:	# Eliminate genes with no ORF or a UTR so short that reads would not align at ends of ORF. 
 				continue
+			else:
+				ORFcounts=(sum(footprints[gene][2][endmode][ORFstart+0-12:UTR3start-0-12]))/((UTR3start-ORFstart-0)/1000)	# This is the rpkm value of the gene. These don't need to both be 12 exactly, but done for simplicity.
+				if ORFcounts<genethresh:
+					continue
+		elif endmode=="all_3":		# Case for 3'end aligned so shift is now negative.
+			if (UTR3start-ORFstart)<=0 or ORFstart<16 or (len(footprints[gene][2][endmode])-UTR3start)<16:	# Eliminate genes with no ORF or a UTR so short that reads would not align at ends of ORF. 
+				continue
+			else:
+				ORFcounts=(sum(footprints[gene][2][endmode][ORFstart+0+16:UTR3start-0+16]))/((UTR3start-ORFstart-0)/1000)	# This is the rpkm value of the gene. These don't need to both be 16 exactly, but done for simplicity.
+				if ORFcounts<genethresh:
+					continue
+		elif endmode=="cov":
+			if (UTR3start-ORFstart)<=0:	# Eliminate genes with no ORF.
+				continue
+			else:
+				ORFcounts=(sum(footprints[gene][2][endmode][ORFstart+0:UTR3start-0]))/((UTR3start-ORFstart-0)/1000)	# This is the rpkm value of the gene.
+				if ORFcounts<genethresh:
+					continue
 		
+		
+
 		if kind==1:
 			if ORFstart<range5 or (UTR3start-ORFstart)<range3:	# Check that there is room for ranges.
 				continue

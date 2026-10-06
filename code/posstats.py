@@ -1,5 +1,5 @@
 import csv
-import tools
+import ribofootprintertools as tools
 import sys
 import re
 from Bio import Seq
@@ -62,9 +62,6 @@ def posstats(
 	footprints=rocc_load[0]
 	samplename=rocc_load[1]
 	endmode=rocc_load[2]
-	if endmode=="all_3":
-		print("ERROR - right now the genelist code doesn't support anything except end5 or cov.")
-		exit()
 	if endmode=="cov" and shift!=0: 
 		print("Warning, coverage being used without a shift of 0.")
 	
@@ -82,7 +79,7 @@ def posstats(
 		UTR3start=int(footprints[gene][4])
 		
 
-		# For positive shifts:			#Note 0 shifts won't work.
+		# For positive shifts:			
 		if shift>=0:
 			if UTRmode==0:
 				counts=footprints[gene][2][endmode][0:ORFstart-shift]
@@ -95,7 +92,10 @@ def posstats(
 				if (ORFstart-shift)<0 or (UTR3start-shift)<0:	# Check for negative indexes:
 					continue
 			elif UTRmode==2:
-				counts=footprints[gene][2][endmode][UTR3start-shift:-shift]
+				if shift==0:
+					counts=footprints[gene][2][endmode][UTR3start-shift:]	# Can't slice to a negative 0.
+				else:
+					counts=footprints[gene][2][endmode][UTR3start-shift:-shift]
 				genesequence=footprints[gene][1][UTR3start:]
 				if (UTR3start-shift)<0:	# Check for negative indexes:
 					continue

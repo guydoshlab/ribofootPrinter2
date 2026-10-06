@@ -4,7 +4,7 @@ import csv
 import os
 import pandas as pd
 import sys
-import tools
+import ribofootprintertools as tools
 
 # Code obtained from mammalian_builddense leading to some extra code that will not be used for this script. 
 

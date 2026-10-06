@@ -1,7 +1,7 @@
 import csv
 import sys
 import re
-import tools
+import ribofootprintertools as tools
 from Bio import Seq
 
 #### Codon analysis position average analysis (metacodon analysis) - it finds motifs of interest in gene sequences and averages the reads around them.

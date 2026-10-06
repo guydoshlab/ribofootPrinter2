@@ -1,6 +1,6 @@
 import csv
 import sys
-import tools
+import ribofootprintertools as tools
 
 # This script counts reads on genes.
 # Inputs:
@@ -10,8 +10,7 @@ import tools
 # outfile - name of the csv file root (no extension) that will be the output of the reads.
 # Note the dictionaries for gene and frame and pause are called "list" but they are dictionaries.
 # Note that counts can only computed when the gene has both UTRs longer than the shift value. Otherwise, genes are left out of the output.
-# Note this function is currently not compatible with 3' end aligned reads since those require negative shifts.
-# endmode currently supported are: "all_5" or "cov"
+# All endmode currently supported.
 def main(inputfiles,shift,doextra,outfile):
 	print("\nName of python script:",(__file__.split("/")[-1]))
 	print("Total arguments passed:", len(locals()))
@@ -73,9 +72,6 @@ def genelist(
 	samplename=rocc_load[1]
 	endmode=rocc_load[2]
 	mappedreads=rocc_load[3]
-	if endmode=="all_3":
-		print("ERROR - right now the genelist code doesn't support anything except end5 or cov.")
-		exit()
 	if endmode=="cov" and shift!=0: 
 		print("Warning, coverage being used without a shift of 0.")
 	
@@ -92,7 +88,7 @@ def genelist(
 		ORFstart=int(footprints[gene][3])
 		UTR3start=int(footprints[gene][4])
 
-		if ((ORFstart-shift)<=0) or (len(footprints[gene][2][endmode])-UTR3start)<=0:		# Either UTR is too short to be compatible with the shift value.
+		if ((ORFstart-shift)<=0 and shift>0) or (UTR3start-ORFstart)<=0 or ORFstart==0 or ((len(footprints[gene][2][endmode])-UTR3start)==0) or ((len(footprints[gene][2][endmode])-UTR3start)<=-shift and shift<0):		# Either UTR is too short to be compatible with the shift value. Now also checking that ORF and UTRs are nonzero (needs to be true for this function to work). Note this allows genes where a UTR is too short to map a ribosome but because of end not being in the UTR, the code does not crash.
 			CDScount=float('nan')
 			UTR5count=float('nan')
 			UTR3count=float('nan')
@@ -108,13 +104,19 @@ def genelist(
 			tooshort+=1
 			continue	# This continue can be deactivated if preferred to keep the genes in the list. Doing so would facilitate comparison of different transcriptomes and make the output independent of shift. 
 			
-		else:
+		else:	 # Two cases here for each kind of shift. 
 			CDScount=sum(footprints[gene][2][endmode][ORFstart-shift:UTR3start-shift])/((UTR3start-ORFstart)/1000)
-			UTR5count=sum(footprints[gene][2][endmode][0:ORFstart-shift])/((ORFstart-shift)/1000)
-			UTR3count=sum(footprints[gene][2][endmode][UTR3start-shift:-shift])/((len(footprints[gene][2][endmode])-UTR3start)/1000)
 			CDSraw=int(round((CDScount*mappedreads/1E6)*((UTR3start-ORFstart)/1000)))
-			UTR5raw=int(round((UTR5count*mappedreads/1E6)*((ORFstart-shift)/1000)))
-			UTR3raw=int(round((UTR3count*mappedreads/1E6)*((len(footprints[gene][2][endmode])-UTR3start)/1000)))
+			if shift>=0:
+				UTR5count=sum(footprints[gene][2][endmode][0:ORFstart-shift])/((ORFstart-shift)/1000)
+				UTR3count=sum(footprints[gene][2][endmode][UTR3start-shift:-shift or None])/((len(footprints[gene][2][endmode])-UTR3start)/1000)	# The none term is required for - shift situation.
+				UTR5raw=int(round((UTR5count*mappedreads/1E6)*((ORFstart-shift)/1000)))
+				UTR3raw=int(round((UTR3count*mappedreads/1E6)*((len(footprints[gene][2][endmode])-UTR3start)/1000)))
+			else:
+				UTR5count=sum(footprints[gene][2][endmode][-shift:ORFstart-shift])/((ORFstart)/1000)
+				UTR3count=sum(footprints[gene][2][endmode][UTR3start-shift:])/((len(footprints[gene][2][endmode])-UTR3start+shift)/1000)
+				UTR5raw=int(round((UTR5count*mappedreads/1E6)*((ORFstart)/1000)))
+				UTR3raw=int(round((UTR3count*mappedreads/1E6)*((len(footprints[gene][2][endmode])-UTR3start+shift)/1000)))
 			
 			CDScount_0=sum(footprints[gene][2][endmode][ORFstart-shift:UTR3start-shift][0::3])/((UTR3start-ORFstart)/1000)
 			CDScount_1=sum(footprints[gene][2][endmode][ORFstart-shift:UTR3start-shift][1::3])/((UTR3start-ORFstart)/1000)
