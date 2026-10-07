@@ -68,7 +68,9 @@ If your ribofootPrinter2 environment uses another Python executable, launch the 
 
 Selected scripts run one at a time in the order shown on the left. Progress and messages appear in the **Run log** pane.
 
-Output roots receive a timestamp so a new run does not normally overwrite an earlier run.
+Note that the ROCC file output of `builddense.py`. is not directly funneled into other scripts (a new run selecting the new ROCC file is needed).
+
+Output roots receive a timestamp so a new run does not normally overwrite an earlier run. Note that timestamps are added at runtime to whatever output root name you create.
 
 ## Metadata and logs
 
@@ -97,7 +99,7 @@ You may also pass the metadata path directly:
 python3 ribofootprinter2_viewer.py /path/to/ribofootprinter_run_TIMESTAMP.metadata.json
 ```
 
-For full `metagene_3D` heatmaps, use ribofootPrinter2's `metagene_3D_plot.py`. It is the preferred viewer for those outputs.
+For full `metagene_3D` heatmaps, use ribofootPrinter2's `metagene_3D_plot.py`. It is the preferred viewer for those outputs. In addition, there will be nothing shown for the output of `builddense.py`.
 
 ## Help and citation
 
