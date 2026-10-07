@@ -40,6 +40,12 @@ Version 3 of pandas is compatible but some csv outputs may not precisely match c
 ## Alignment files
 *ribofootPrinter* is compatible with bowtie1 aligned SAM files. We use the bowtie indexed version of the MANEv1.4_shortnames.fasta reduced transcriptome file for alignments (EBWT file extension), found [here](https://github.com/guydoshlab/ribofootPrinter2/tree/main/preparation/MANE_v1.4_Preparation/output_files) (unzip before use).
 
+A good initial bowtie1 command to try for aligning fastq files to the MANE transcriptome is:
+```unix
+bowtie -v 1 -y -S -m 1 --best MANEv1.4 input.fastq output.SAM
+```
+Users should consult the discussion in the associated manuscript for further considerations about the *-m 1* flag.
+
 *ribofootPrinter* can also use transcriptomes from other species and we provide FASTA files for *S. cerevisiae* [here](https://github.com/guydoshlab/ribofootPrinter2/tree/main/preparation/Scer_R64-1-1_Preparation/).
 
 An overview on how to run the different *ribofootPrinter* scripts is listed below. This includes example code which can be used directly on the data files (SAM and ROCC) provided [here](https://zenodo.org/records/17917807). 
