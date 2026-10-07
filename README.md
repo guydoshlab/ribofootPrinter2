@@ -35,7 +35,7 @@ pandas v2.3.2\
 numpy v2.0.2\
 openpyxl v3.1.5\
 \
-(Version 3 of pandas is compatible but csv outputs may not precisely match due to changes in rounding.)
+(Version 3 of pandas is compatible but some csv outputs may not precisely match csv outputs created with older versions due to changes in rounding.)
 
 ## Alignment files
 *ribofootPrinter* is compatible with bowtie1 aligned SAM files. We use the bowtie indexed version of the MANEv1.4_shortnames.fasta reduced transcriptome file for alignments (EBWT file extension), found [here](https://github.com/guydoshlab/ribofootPrinter2/tree/main/preparation/MANE_v1.4_Preparation/output_files) (unzip before use).
