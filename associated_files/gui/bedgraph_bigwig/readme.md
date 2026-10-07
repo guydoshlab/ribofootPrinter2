@@ -18,12 +18,7 @@ The 5′ and 3′ BedGraphs can have separate shift values. Multiple SAM files c
 - bedtools
 - deepTools (`bamCoverage`)
 
-These command-line tools can be installed with Conda:
-
-```bash
-conda create -n sam-to-igv -c conda-forge -c bioconda python samtools bedtools deeptools
-conda activate sam-to-igv
-```
+See the respective websites for download and install instructions. This can also be handled using package managers and virtual environments.
 
 ## Run the program
 
