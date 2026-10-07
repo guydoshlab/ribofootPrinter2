@@ -173,7 +173,7 @@ We used the following settings, and redirect (via the > operator) to save metada
 python $CODE/genelist.py $ROCC/80S.rocc 12 1 $DATA/genelist/80S_gl > $DATA/genelist/80S_gl_metadata.txt 
 python $CODE/genelist.py $ROCC/40S.rocc 12 1 $DATA/genelist/40S_gl > $DATA/genelist/40S_gl_metadata.txt 
 ```
-For this analysis, the 5'-end aligned data are shifted to accommodate the P-site of the ribosome by using a shift of 12. Note that genes with 5'-UTRs shorter than the shift value are excluded from the analysis.
+For this analysis, the 5'-end aligned data are shifted to accommodate the P-site of the ribosome by using a shift of 12. Note that genes with 5'-UTRs shorter than the shift value are excluded from the analysis. Note that the 28 nt arrow depicted corresponds to the 28 bonds within a read made up of 29 nt.
 
 ![alt text](https://github.com/guydoshlab/ribofootPrinter2/blob/main/Github_figures/shift.png)
 
