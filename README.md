@@ -34,6 +34,7 @@ matplotlib v3.9.4\
 pandas v2.3.2\
 numpy v2.0.2\
 openpyxl v3.1.5\
+\
 (Version 3 of pandas is compatible but csv outputs may not precisely match due to changes in rounding.)
 
 ## Alignment files
