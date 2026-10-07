@@ -6,33 +6,45 @@ ribofootPrinter2 adds support for version 1.4 of the MANE transcriptome. It upda
 We recommend going to the "releases" page and downloading a zip file of the last stable release for use. Releases are also archived on Zenodo. If there are code updates since the last formal release, they will be available here on the main page as a beta version (not fully tested).
 
 # Download ribofootPrinter from Github
-To begin, we suggest starting with the entire *ribofootPrinter2* folder that is created after downloading and unzipping the compressed file available on the releases page. The folder can also be downloaded by using the *git* command.
+To begin, we suggest starting with the entire *ribofootPrinter2* folder that is created after downloading and unzipping the compressed file available on the releases page. The folder can also be downloaded by using the *curl* command and unzipped using the *unzip* command.
 
 ```unix
-git clone https://github.com/guydoshlab/ribofootPrinter2.1
+curl -L https://github.com/guydoshlab/ribofootPrinter2/archive/refs/tags/v2.2.0.zip -o ribofootPrinter2-v2.2.0.zip
+unzip -q ribofootPrinter2-v2.2.0.zip && rm ribofootPrinter2-v2.2.0.zip
 ```
 Move the folder to a convenient place to work with it (such as your home directory) and navigate to the folder from the command line using the *cd* command.
+
+## Package manager (optional)
+The *ribofootPrinter* package can be installed using the *pip* package manager. To download and install the core scripts (typically in a virtual environment), use this command:
+```unix
+python -m pip install ribofootprinter
+```
 # Requirements for running ribofootPrinter
 ## Environment
 We run the Python toolbox ribofootPrinter locally inside a virtual environment.
 
-The ribofootPrinter package has the following dependencies:
+The *ribofootPrinter* package has the following dependencies:
 
 python v3.9.23\
 biopython v1.85\
 matplotlib v3.9.4\
 pandas v2.3.2\
 numpy v2.0.2\
-openpyxl v3.1.5
+openpyxl v3.1.5\
+(Version 3 of pandas is compatible but csv outputs may not precisely match due to changes in rounding.)
 
 ## Alignment files
 *ribofootPrinter* is compatible with bowtie1 aligned SAM files. We use the bowtie indexed version of the MANEv1.4_shortnames.fasta reduced transcriptome file for alignments (EBWT file extension), found [here](https://github.com/guydoshlab/ribofootPrinter2/tree/main/preparation/MANE_v1.4_Preparation/output_files) (unzip before use).
 
+*ribofootPrinter* can also use transcriptomes from other species and we provide FASTA files for *S. cerevisiae* [here](https://github.com/guydoshlab/ribofootPrinter2/tree/main/preparation/Scerevisiae/).
+
 An overview on how to run the different *ribofootPrinter* scripts is listed below. This includes example code which can be used directly on the data files (SAM and ROCC) provided [here](https://zenodo.org/records/17917807). 
+
+The code can also be run using a graphical user interface and we provide an example implementation [here](https://github.com/guydoshlab/ribofootPrinter2/tree/main/associated_files/gui/).
 
 More details on preparation of the MANE transcriptome for alignment (shortnames FASTA file) and ribofootPrinter (longnames FASTA file) can be found [here](https://github.com/guydoshlab/ribofootPrinter2/tree/main/preparation/MANE_v1.4_Preparation/).
 
-More details how to view your aligned reads in IGV can be found [here](https://github.com/guydoshlab/ribofootPrinter2/tree/main/preparation/MANE_v1.4_IGV).
+More details how to view your aligned reads in IGV can be found [here](https://github.com/guydoshlab/ribofootPrinter2/tree/main/preparation/IGV).
 
 # Running the *ribofootPrinter* package
 All scripts are run in the terminal by calling Python and providing the Python script and settings as described below. An overview of the different settings is provided in table format for each script.
