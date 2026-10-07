@@ -35,4 +35,9 @@ for key in (variables.keys()):
 print("\n--------------------------------\n")
 
 # Now call the wrapper function
-metagene_3D.main(variables["fastain"],variables["samin"],variables["outfile"],variables["subsetlist"],variables["smallsize"],variables["largesize"],variables["windowleft"],variables["windowright"],variables["metagene"])
+# This version allows multiple input SAM files in the input file, comma separated.
+# Outfiles numbered in corresponding order.
+outfilenum=0
+for samfile in variables["samin"].split(","):
+	outfilenum+=1
+	metagene_3D.main(variables["fastain"],samfile,variables["outfile"]+"_"+str(outfilenum),variables["subsetlist"],variables["smallsize"],variables["largesize"],variables["windowleft"],variables["windowright"],variables["metagene"])

@@ -28,7 +28,7 @@ INPUT_shift
 INPUT_UTRmode
 1
 
-# rocc file that contains the read alignment and sequence data
+# rocc file(s) that contains the read alignment and sequence data - comma separated
 INPUT_inputfiles
 80S.rocc
 

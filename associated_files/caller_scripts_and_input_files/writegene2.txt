@@ -7,7 +7,7 @@
 INPUT_genenames
 ACTB,EIF4G2
 
-# rocc file that contains the read alignment and sequence data
+# rocc file(s) that contains the read alignment and sequence data - comma separated
 INPUT_inputfiles
 80S.rocc
 

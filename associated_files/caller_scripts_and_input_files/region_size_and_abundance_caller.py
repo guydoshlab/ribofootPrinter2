@@ -35,4 +35,9 @@ for key in (variables.keys()):
 print("\n--------------------------------\n")
 
 # Now call the wrapper function
-region_size_and_abundance.main(variables["fastain"],variables["samin"],variables["outfile"],variables["smallsize"],variables["largesize"],variables["window"],variables["subsetlist"])
+# This version allows multiple input SAM files in the input file, comma separated.
+# Outfiles numbered in corresponding order.
+outfilenum=0
+for samfile in variables["samin"].split(","):
+	outfilenum+=1
+	region_size_and_abundance.main(variables["fastain"],samfile,variables["outfile"]+"_"+str(outfilenum),variables["smallsize"],variables["largesize"],variables["window"],variables["subsetlist"])

@@ -1,4 +1,4 @@
-# Input file for metagene_3D.
+# Input file for region_size_and_abundance.
 # Place input under each input param below:
 #
 #
@@ -10,32 +10,24 @@ MANEv1.4_longnames.fasta
 
 # SAM files that contain the read alignment - comma separated
 INPUT_samin
-40S.SAM
+80S.SAM
 
 # Name of the output file (doesn't need .csv extension)
 INPUT_outfile
-40S_3dmg_start
+80S_rsa
 
 #These next two are the upper and lower ranges of read sizes included.
 INPUT_smallsize
-20
+25
 
 INPUT_largesize
-80
+34
 
-# These next two set the size of the window in the average in nt.
-INPUT_windowleft
-50
-
-INPUT_windowright
-50
-
-#This determines whether doing a start or stop metagene (1 vs 2).
-INPUT_metagene
-1
+#This is the window size around start/stop codons and therefore defines the regions.
+INPUT_window
+4
 
 # Excel file with column of genes you want analyzed; if not needed, put none
 INPUT_subsetlist
 none
-
 
