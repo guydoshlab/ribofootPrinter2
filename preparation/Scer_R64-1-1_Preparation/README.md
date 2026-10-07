@@ -10,6 +10,6 @@ This is referred to as Scer_R64-1-1. This annotation is included on SGD. Unlike 
 This is the annotation for yeast grown in YPD.
 
 ## PMID: 29254944
-This is referred to as Scer_R64-1-1_alt
+This is referred to as Scer_R64-1-1_alt. It includes more genes than the above annotation.
 
 
