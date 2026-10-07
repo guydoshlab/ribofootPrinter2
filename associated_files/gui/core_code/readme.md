@@ -68,7 +68,7 @@ If your ribofootPrinter2 environment uses another Python executable, launch the 
 
 Selected scripts run one at a time in the order shown on the left. Progress and messages appear in the **Run log** pane.
 
-Note that the ROCC file output of `builddense.py`. is not directly funneled into other scripts (a new run selecting the new ROCC file is needed).
+Note that the ROCC file output of `builddense.py` is not directly funneled into other scripts (a new run selecting the new ROCC file is needed).
 
 Output roots receive a timestamp so a new run does not normally overwrite an earlier run. Note that timestamps are added at runtime to whatever output root name you create.
 
