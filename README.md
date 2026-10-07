@@ -5,7 +5,7 @@ ribofootPrinter2 adds support for version 1.4 of the MANE transcriptome. It upda
 
 We recommend going to the "releases" page and downloading a zip file of the last stable release for use. Releases are also archived on Zenodo. If there are code updates since the last formal release, they will be available here on the main page as a beta version (not fully tested).
 
-## How to cite *ribofootPrinter2*
+## How to cite ribofootPrinter2
 If you use *ribofootPrinter2* in your work, the reference to use for citation is [PMID 41000942](https://pubmed.ncbi.nlm.nih.gov/41000942/). If you are interested in using *ribofootPrinter2* for commercial purposes, reach out to the corresponding author contact information in this reference to discuss collaboration.
 
 # Download ribofootPrinter from Github
