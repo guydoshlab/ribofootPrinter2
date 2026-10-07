@@ -1,12 +1,15 @@
-# ribofootPrinter2.1
+# ribofootPrinter2.2
 ribofootPrinter2 is a package of Python 3 tools for analyzing data from ribosome profiling and other RNA-based sequencing experiments. This is a new version of the [first ribofootPrinter](https://github.com/guydoshlab/ribofootPrinter) package, which was originally based on the [ReducedTranscriptome](https://github.com/guydoshlab/ReducedTranscriptome) package. 
 
 ribofootPrinter2 adds support for version 1.4 of the MANE transcriptome. It updates the functionality of all the previous core tools and adds several new capabilities. For guidance on use of the package, please see the associated manuscript on bioRxiv: https://www.biorxiv.org/content/10.1101/2021.07.04.451082
 
 We recommend going to the "releases" page and downloading a zip file of the last stable release for use. Releases are also archived on Zenodo. If there are code updates since the last formal release, they will be available here on the main page as a beta version (not fully tested).
 
+## How to cite *ribofootPrinter2*
+If you use *ribofootPrinter2* in your work, the reference to use for citation is [PMID 41000942](https://pubmed.ncbi.nlm.nih.gov/41000942/). If you are interested in using *ribofootPrinter2* for commercial purposes, reach out to the corresponding author contact information in this reference to discuss collaboration.
+
 # Download ribofootPrinter from Github
-To begin, we suggest starting with the entire *ribofootPrinter2* folder that is created after downloading and unzipping the compressed file available on the releases page. The folder can also be downloaded by using the *curl* command and unzipped using the *unzip* command.
+To begin, we suggest starting with the entire *ribofootPrinter2* folder that is created after downloading and unzipping the compressed file available on the releases page. From the command line, the folder can be downloaded by using the *curl* command and unzipped using the *unzip* command.
 
 ```unix
 curl -L https://github.com/guydoshlab/ribofootPrinter2/archive/refs/tags/v2.2.0.zip -o ribofootPrinter2-v2.2.0.zip
